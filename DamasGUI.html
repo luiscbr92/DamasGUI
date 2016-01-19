@@ -1,0 +1,286 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DamasGUI</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DamasGUI</strong></big></big> (version 1.0, 26 de Mayo 2014)</font></td
+></tr></table>
+    <p><tt>Juego&nbsp;de&nbsp;las&nbsp;Damas&nbsp;para&nbsp;la&nbsp;asignatura&nbsp;de&nbsp;Paradigmas&nbsp;de&nbsp;Programacion&nbsp;del&nbsp;Grado&nbsp;en&nbsp;Ingenieria&nbsp;Informatica&nbsp;de&nbsp;la&nbsp;Universidad&nbsp;de&nbsp;Valladolid.<br>
+Este&nbsp;juego&nbsp;se&nbsp;ha&nbsp;realizado&nbsp;con&nbsp;la&nbsp;libreria&nbsp;PYGTK&nbsp;para&nbsp;la&nbsp;implementacion&nbsp;grafica.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="gtk.html">gtk</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="DamasGUI.html#GUI">GUI</a>
+</font></dt><dt><font face="helvetica, arial"><a href="DamasGUI.html#Game">Game</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GUI">class <strong>GUI</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Esta&nbsp;clase&nbsp;se&nbsp;encarga&nbsp;de&nbsp;manejar&nbsp;la&nbsp;interfaz&nbsp;grafica&nbsp;mediante&nbsp;sus&nbsp;procedimientos.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="GUI-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Inicializa&nbsp;las&nbsp;instancias&nbsp;de&nbsp;esta&nbsp;clase.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-initconfig">initconfig</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-quit_program">quit_program</a>(self,&nbsp;widget=None,&nbsp;event=None,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-initmenu">initmenu</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-initcontent">initcontent</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-initstatus">initstatus</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;inicializa&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a></tt></dd></dl>
+
+<dl><dt><a name="GUI-actualizar"><strong>actualizar</strong></a>(self)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;llamar&nbsp;a&nbsp;todas&nbsp;los&nbsp;procedimientos&nbsp;que&nbsp;actualizan&nbsp;la&nbsp;informacion&nbsp;que&nbsp;se&nbsp;muestra&nbsp;en&nbsp;la&nbsp;ventana&nbsp;del&nbsp;juego.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizarTablero">actualizarTablero</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizarMoves">actualizarMoves</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizarEstado">actualizarEstado</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizarTablaRonda">actualizarTablaRonda</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="GUI-actualizarEstado"><strong>actualizarEstado</strong></a>(self)</dt><dd><tt>Actualiza&nbsp;la&nbsp;barra&nbsp;de&nbsp;estado,&nbsp;que&nbsp;esta&nbsp;en&nbsp;la&nbsp;parte&nbsp;inferior&nbsp;de&nbsp;la&nbsp;ventana.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-ponerEstado1">ponerEstado1</a>(self,&nbsp;texto)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-ponerEstado2">ponerEstado2</a>(self,&nbsp;texto)</tt></dd></dl>
+
+<dl><dt><a name="GUI-actualizarMoves"><strong>actualizarMoves</strong></a>(self)</dt><dd><tt>Actualiza&nbsp;la&nbsp;tabla&nbsp;de&nbsp;movimientos&nbsp;realizados&nbsp;en&nbsp;la&nbsp;partida.&nbsp;Tambien&nbsp;se&nbsp;encarga&nbsp;de&nbsp;activar&nbsp;y&nbsp;desactivar&nbsp;el&nbsp;boton&nbsp;de&nbsp;deshacer.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-anadirMovimiento">anadirMovimiento</a>(self,&nbsp;move)</tt></dd></dl>
+
+<dl><dt><a name="GUI-actualizarTablaRonda"><strong>actualizarTablaRonda</strong></a>(self)</dt><dd><tt>Actualiza&nbsp;la&nbsp;tabla&nbsp;que&nbsp;indica&nbsp;las&nbsp;fichas&nbsp;restantes&nbsp;de&nbsp;cada&nbsp;jugador.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game">Game</a>.contar_fichas(self)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;trabaja&nbsp;con&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>.</tt></dd></dl>
+
+<dl><dt><a name="GUI-actualizarTablero"><strong>actualizarTablero</strong></a>(self)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;actualizar&nbsp;el&nbsp;tablero&nbsp;del&nbsp;juego,&nbsp;colocando&nbsp;las&nbsp;imagenes&nbsp;de&nbsp;las&nbsp;fichas&nbsp;correspondientes&nbsp;a&nbsp;cada&nbsp;boton.</tt></dd></dl>
+
+<dl><dt><a name="GUI-actualizarconfig"><strong>actualizarconfig</strong></a>(self)</dt><dd><tt>Actualiza&nbsp;el&nbsp;fichero&nbsp;de&nbsp;configuracion&nbsp;del&nbsp;juego.</tt></dd></dl>
+
+<dl><dt><a name="GUI-add_filters"><strong>add_filters</strong></a>(self, dialog)</dt><dd><tt>Establece&nbsp;y&nbsp;agrega&nbsp;filtros&nbsp;de&nbsp;extension&nbsp;de&nbsp;los&nbsp;archivos&nbsp;que&nbsp;contienen&nbsp;partidas&nbsp;guardadas.</tt></dd></dl>
+
+<dl><dt><a name="GUI-anadirMovimiento"><strong>anadirMovimiento</strong></a>(self, move)</dt><dd><tt>Agrega&nbsp;un&nbsp;movimiento&nbsp;a&nbsp;la&nbsp;lista&nbsp;de&nbsp;movimientos&nbsp;de&nbsp;la&nbsp;tabla</tt></dd></dl>
+
+<dl><dt><a name="GUI-btn_send"><strong>btn_send</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Este&nbsp;procedimiento&nbsp;se&nbsp;activa&nbsp;cuando&nbsp;el&nbsp;programa&nbsp;recibe&nbsp;la&nbsp;orden&nbsp;de&nbsp;hacer&nbsp;algun&nbsp;movimiento.&nbsp;Se&nbsp;encarga&nbsp;de&nbsp;enviarselo&nbsp;al&nbsp;objeto&nbsp;game.<br>
+Si&nbsp;el&nbsp;movimiento&nbsp;recibido&nbsp;no&nbsp;es&nbsp;valido,&nbsp;muestra&nbsp;el&nbsp;error&nbsp;en&nbsp;el&nbsp;estado&nbsp;de&nbsp;la&nbsp;derecha.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game">Game</a>.realizarMovimiento(self,&nbsp;play)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-ponerEstado2">ponerEstado2</a>(self,&nbsp;texto)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;trabaja&nbsp;con&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>.</tt></dd></dl>
+
+<dl><dt><a name="GUI-btn_undo"><strong>btn_undo</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;deshacer&nbsp;el&nbsp;ultimo&nbsp;movimiento.&nbsp;Para&nbsp;ello,&nbsp;reinicializa&nbsp;la&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>,&nbsp;y&nbsp;realiza&nbsp;todos&nbsp;los&nbsp;movimientos&nbsp;realizados&nbsp;hasta&nbsp;el&nbsp;momento,&nbsp;salvo&nbsp;el&nbsp;ultimo.<br>
+Dicho&nbsp;movimiento&nbsp;es&nbsp;borrado&nbsp;de&nbsp;la&nbsp;lista&nbsp;de&nbsp;movimientos.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game">Game</a>.realizarMovimiento(self,&nbsp;play)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;reinicializa&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>.</tt></dd></dl>
+
+<dl><dt><a name="GUI-callback"><strong>callback</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;gestionar&nbsp;las&nbsp;entrada&nbsp;de&nbsp;movimientos&nbsp;a&nbsp;partir&nbsp;de&nbsp;los&nbsp;clicks&nbsp;en&nbsp;el&nbsp;tablero.&nbsp;Diferencia&nbsp;entre&nbsp;el&nbsp;primer&nbsp;click&nbsp;para&nbsp;el&nbsp;origen,&nbsp;y&nbsp;el&nbsp;segundo&nbsp;para&nbsp;el&nbsp;destino.<br>
+Seguidamente&nbsp;construye&nbsp;el&nbsp;movimiento&nbsp;en&nbsp;formato&nbsp;string&nbsp;y&nbsp;lo&nbsp;envia&nbsp;para&nbsp;que&nbsp;se&nbsp;procese.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game">Game</a>.realizarMovimiento(self,&nbsp;play)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-ponerEstado2">ponerEstado2</a>(self,&nbsp;texto)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-show_endgame">show_endgame</a>(self,&nbsp;winner)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;trabaja&nbsp;con&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>.</tt></dd></dl>
+
+<dl><dt><a name="GUI-click"><strong>click</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;cerrar&nbsp;el&nbsp;dialogo&nbsp;de&nbsp;ayuda&nbsp;cuando&nbsp;se&nbsp;pulsa&nbsp;uno&nbsp;de&nbsp;los&nbsp;botones&nbsp;destinados&nbsp;a&nbsp;ello.</tt></dd></dl>
+
+<dl><dt><a name="GUI-initconfig"><strong>initconfig</strong></a>(self)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;manejar&nbsp;el&nbsp;fichero&nbsp;de&nbsp;configuracion&nbsp;del&nbsp;juego.&nbsp;Si&nbsp;dicho&nbsp;fichero&nbsp;no&nbsp;existe,&nbsp;lo&nbsp;crea&nbsp;y&nbsp;lo&nbsp;establece&nbsp;con&nbsp;los&nbsp;valores&nbsp;predeterminados.<br>
+El&nbsp;fichero&nbsp;de&nbsp;configuracion&nbsp;contiene&nbsp;los&nbsp;nombres&nbsp;de&nbsp;usuario&nbsp;y&nbsp;la&nbsp;plantilla&nbsp;de&nbsp;tablero.</tt></dd></dl>
+
+<dl><dt><a name="GUI-initcontent"><strong>initcontent</strong></a>(self)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;iniciar&nbsp;todo&nbsp;el&nbsp;contenido&nbsp;principal&nbsp;de&nbsp;la&nbsp;ventana&nbsp;del&nbsp;programa:&nbsp;el&nbsp;tablero&nbsp;y&nbsp;los&nbsp;controles&nbsp;del&nbsp;juego&nbsp;que&nbsp;hay&nbsp;en&nbsp;la&nbsp;parte&nbsp;derecha.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-btn_send">btn_send</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-btn_undo">btn_undo</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-callback">callback</a>(self,&nbsp;widget,&nbsp;data=None)</tt></dd></dl>
+
+<dl><dt><a name="GUI-initlist"><strong>initlist</strong></a>(self)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;iniciar&nbsp;la&nbsp;tabla&nbsp;donde&nbsp;se&nbsp;muestra&nbsp;la&nbsp;lista&nbsp;de&nbsp;movimientos&nbsp;de&nbsp;la&nbsp;partida&nbsp;actual.</tt></dd></dl>
+
+<dl><dt><a name="GUI-initmenu"><strong>initmenu</strong></a>(self)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;iniciar&nbsp;el&nbsp;menu&nbsp;de&nbsp;opciones.&nbsp;Asigna&nbsp;atajos&nbsp;de&nbsp;teclado&nbsp;para&nbsp;cada&nbsp;opcion&nbsp;y&nbsp;de&nbsp;conectarlos&nbsp;con&nbsp;su&nbsp;funcion&nbsp;correspondiente.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-menu_new">menu_new</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-menu_save">menu_save</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-menu_load">menu_load</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-quit_program">quit_program</a>(self,&nbsp;widget=None,&nbsp;event=None,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-menu_preferences">menu_preferences</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-menu_contents">menu_contents</a>(self,&nbsp;widget,&nbsp;data=None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-menu_about">menu_about</a>(self,&nbsp;widget,&nbsp;data=None)</tt></dd></dl>
+
+<dl><dt><a name="GUI-initstatus"><strong>initstatus</strong></a>(self)</dt><dd><tt>Inicia&nbsp;la&nbsp;barra&nbsp;de&nbsp;estado.</tt></dd></dl>
+
+<dl><dt><a name="GUI-menu_about"><strong>menu_about</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Muestra&nbsp;el&nbsp;dialogo&nbsp;con&nbsp;informacion&nbsp;sobre&nbsp;los&nbsp;autores.</tt></dd></dl>
+
+<dl><dt><a name="GUI-menu_contents"><strong>menu_contents</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Muestra&nbsp;y&nbsp;construye&nbsp;el&nbsp;dialogo&nbsp;de&nbsp;ayuda.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-click">click</a>(self,&nbsp;widget,&nbsp;data=None)</tt></dd></dl>
+
+<dl><dt><a name="GUI-menu_load"><strong>menu_load</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Muestra&nbsp;un&nbsp;dialogo&nbsp;para&nbsp;elegir&nbsp;un&nbsp;archivo&nbsp;que&nbsp;contenga&nbsp;una&nbsp;partida&nbsp;guardada.&nbsp;Accede&nbsp;al&nbsp;fichero&nbsp;que&nbsp;se&nbsp;elige&nbsp;en&nbsp;modo&nbsp;lectura.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-add_filters">add_filters</a>(self,&nbsp;dialog)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game">Game</a>.realizarMovimientosFichero(self,&nbsp;fich)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-ponerEstado2">ponerEstado2</a>(self,&nbsp;texto)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-show_endgame">show_endgame</a>(self,&nbsp;winner)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;reinicializa&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>.</tt></dd></dl>
+
+<dl><dt><a name="GUI-menu_new"><strong>menu_new</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Crea&nbsp;una&nbsp;nueva&nbsp;partida,&nbsp;si&nbsp;se&nbsp;pulsa&nbsp;la&nbsp;opcion&nbsp;del&nbsp;menu&nbsp;superior.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;reinicializa&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a></tt></dd></dl>
+
+<dl><dt><a name="GUI-menu_preferences"><strong>menu_preferences</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Muestra&nbsp;y&nbsp;construye&nbsp;el&nbsp;menu&nbsp;de&nbsp;opciones&nbsp;del&nbsp;juego.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizarconfig">actualizarconfig</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="GUI-menu_save"><strong>menu_save</strong></a>(self, widget, data<font color="#909090">=None</font>)</dt><dd><tt>Muestra&nbsp;un&nbsp;menu&nbsp;para&nbsp;guardar&nbsp;la&nbsp;partida&nbsp;en&nbsp;un&nbsp;archivo.&nbsp;Accede&nbsp;al&nbsp;fichero&nbsp;que&nbsp;se&nbsp;elige&nbsp;en&nbsp;modo&nbsp;escritura.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-add_filters">add_filters</a>(self,&nbsp;dialog)</tt></dd></dl>
+
+<dl><dt><a name="GUI-ponerEstado1"><strong>ponerEstado1</strong></a>(self, texto)</dt><dd><tt>Pone&nbsp;la&nbsp;informacion&nbsp;que&nbsp;recibe&nbsp;en&nbsp;el&nbsp;parametro&nbsp;texto&nbsp;en&nbsp;el&nbsp;estado&nbsp;de&nbsp;la&nbsp;izquierda.</tt></dd></dl>
+
+<dl><dt><a name="GUI-ponerEstado2"><strong>ponerEstado2</strong></a>(self, texto)</dt><dd><tt>Pone&nbsp;la&nbsp;informacion&nbsp;que&nbsp;recibe&nbsp;en&nbsp;el&nbsp;parametro&nbsp;texto&nbsp;en&nbsp;el&nbsp;estado&nbsp;de&nbsp;la&nbsp;derecha.</tt></dd></dl>
+
+<dl><dt><a name="GUI-quit_program"><strong>quit_program</strong></a>(self, widget<font color="#909090">=None</font>, event<font color="#909090">=None</font>, data<font color="#909090">=None</font>)</dt><dd><tt>Cierra&nbsp;el&nbsp;programa.</tt></dd></dl>
+
+<dl><dt><a name="GUI-show_endgame"><strong>show_endgame</strong></a>(self, winner)</dt><dd><tt>Hace&nbsp;aparecer&nbsp;un&nbsp;dialogo&nbsp;al&nbsp;final&nbsp;de&nbsp;la&nbsp;partida&nbsp;que&nbsp;muestra&nbsp;el&nbsp;ganador&nbsp;y&nbsp;pregunta&nbsp;si&nbsp;se&nbsp;desea&nbsp;reiniciar&nbsp;el&nbsp;juego.<br>
+Si&nbsp;se&nbsp;reinicia&nbsp;el&nbsp;juego,&nbsp;se&nbsp;inicializa&nbsp;una&nbsp;nueva&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>,&nbsp;que&nbsp;se&nbsp;guarda&nbsp;sobre&nbsp;el&nbsp;mismo&nbsp;atributo&nbsp;que&nbsp;albergaba&nbsp;la&nbsp;anterior&nbsp;instancia.<br>
+Si&nbsp;no&nbsp;se&nbsp;reinicia&nbsp;el&nbsp;juego&nbsp;se&nbsp;cierra&nbsp;el&nbsp;programa.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-actualizar">actualizar</a>(self)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#GUI-quit_program">quit_program</a>(self,&nbsp;widget=None,&nbsp;event=None,&nbsp;data=None)<br>
+OBJETOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Se&nbsp;reinicializa&nbsp;el&nbsp;atributo&nbsp;game&nbsp;que&nbsp;contiene&nbsp;una&nbsp;instancia&nbsp;de&nbsp;<a href="#Game">Game</a>.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Game">class <strong>Game</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Esta&nbsp;clase&nbsp;se&nbsp;encarga&nbsp;de&nbsp;controlar&nbsp;las&nbsp;reglas&nbsp;del&nbsp;juego.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Game-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Inicializa&nbsp;las&nbsp;instancias&nbsp;de&nbsp;esta&nbsp;clase.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-initTablero">initTablero</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="Game-contar_fichas"><strong>contar_fichas</strong></a>(self)</dt><dd><tt>Cuenta&nbsp;las&nbsp;fichas&nbsp;restantes&nbsp;de&nbsp;cada&nbsp;jugador.<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;fblancas:&nbsp;numero&nbsp;de&nbsp;fichas&nbsp;blancas&nbsp;restantes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;fnegras:&nbsp;numero&nbsp;de&nbsp;fichas&nbsp;negras&nbsp;restantes.</tt></dd></dl>
+
+<dl><dt><a name="Game-deshacer_movimiento"><strong>deshacer_movimiento</strong></a>(self, tablero, pila)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;deshacer&nbsp;el&nbsp;ultimo&nbsp;movimiento&nbsp;que&nbsp;hay&nbsp;en&nbsp;la&nbsp;pila.</tt></dd></dl>
+
+<dl><dt><a name="Game-explorar"><strong>explorar</strong></a>(self, tablero, f0, c0, turno, pila)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;explorar&nbsp;las&nbsp;4&nbsp;diagonales&nbsp;alrededor&nbsp;en&nbsp;busca&nbsp;de&nbsp;nuevas&nbsp;capturas.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-verificar_jugada">verificar_jugada</a>(self,&nbsp;tablero,&nbsp;turno,&nbsp;jugada)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-hacer_movimiento">hacer_movimiento</a>(self,&nbsp;tablero,&nbsp;pila)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-explorar">explorar</a>(self,&nbsp;tablero,&nbsp;f0,&nbsp;c0,&nbsp;turno,&nbsp;pila)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RECURSIVIDAD<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-deshacer_movimiento">deshacer_movimiento</a>(self,&nbsp;tablero,&nbsp;pila)<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;(nmax,fmax,cmax):&nbsp;una&nbsp;tupla&nbsp;con&nbsp;informacion&nbsp;sobre&nbsp;el&nbsp;camino&nbsp;que&nbsp;mas&nbsp;fichas&nbsp;opuestas&nbsp;elimina.</tt></dd></dl>
+
+<dl><dt><a name="Game-getMoves"><strong>getMoves</strong></a>(self)</dt><dd><tt>Devuelve&nbsp;la&nbsp;lista&nbsp;de&nbsp;movimientos&nbsp;realizados&nbsp;durante&nbsp;la&nbsp;partida&nbsp;actual.<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;self.<strong>moves</strong></tt></dd></dl>
+
+<dl><dt><a name="Game-getTablero"><strong>getTablero</strong></a>(self)</dt><dd><tt>Devuelve&nbsp;el&nbsp;tabero&nbsp;interno.<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;self.<strong>tablero</strong></tt></dd></dl>
+
+<dl><dt><a name="Game-hacer_movimiento"><strong>hacer_movimiento</strong></a>(self, tablero, jugada, pila)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;realizar&nbsp;un&nbsp;movimiento&nbsp;de&nbsp;ficha,&nbsp;detectando&nbsp;promocion&nbsp;a&nbsp;reina&nbsp;y&nbsp;captura<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-signo">signo</a>(self,&nbsp;x)<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;captura:&nbsp;valor&nbsp;logico.</tt></dd></dl>
+
+<dl><dt><a name="Game-initTablero"><strong>initTablero</strong></a>(self)</dt><dd><tt>Inicializa&nbsp;el&nbsp;tablero&nbsp;interno&nbsp;del&nbsp;programa.<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;tab:&nbsp;contiene&nbsp;el&nbsp;tablero&nbsp;interno&nbsp;del&nbsp;programa.</tt></dd></dl>
+
+<dl><dt><a name="Game-jugar"><strong>jugar</strong></a>(self, tablero, jugada, turno, pila)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;buscar&nbsp;nuevas&nbsp;posibles&nbsp;capturas&nbsp;en&nbsp;caso&nbsp;de&nbsp;que&nbsp;ya&nbsp;se&nbsp;haya&nbsp;producido&nbsp;una.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-explorar">explorar</a>(self,&nbsp;tablero,&nbsp;f0,&nbsp;c0,&nbsp;turno,&nbsp;pila)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-jugar">jugar</a>(self,&nbsp;tablero,&nbsp;jugada,&nbsp;turno,&nbsp;pila)&nbsp;&nbsp;&nbsp;&nbsp;RECURSIVIDAD</tt></dd></dl>
+
+<dl><dt><a name="Game-num_piezas"><strong>num_piezas</strong></a>(self, tablero, turno)</dt><dd><tt>Cuenta&nbsp;las&nbsp;fichas&nbsp;restantes&nbsp;del&nbsp;jugador&nbsp;opuesto.<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;n:&nbsp;numero&nbsp;de&nbsp;fichas&nbsp;del&nbsp;jugador&nbsp;opuesto</tt></dd></dl>
+
+<dl><dt><a name="Game-realizarMovimiento"><strong>realizarMovimiento</strong></a>(self, play)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;procesar&nbsp;una&nbsp;jugada&nbsp;que&nbsp;recibe&nbsp;en&nbsp;el&nbsp;parametro&nbsp;play.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-verificar_jugada">verificar_jugada</a>(self,&nbsp;tablero,&nbsp;turno,&nbsp;jugada)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-jugar">jugar</a>(self,&nbsp;tablero,&nbsp;jugada,&nbsp;turno,&nbsp;pila)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-num_piezas">num_piezas</a>(self,&nbsp;tablero,&nbsp;turno)<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Devuelve&nbsp;un&nbsp;string&nbsp;que&nbsp;puede&nbsp;contener&nbsp;incidencias&nbsp;de&nbsp;la&nbsp;partida.</tt></dd></dl>
+
+<dl><dt><a name="Game-realizarMovimientosFichero"><strong>realizarMovimientosFichero</strong></a>(self, fich)</dt><dd><tt>Se&nbsp;encarga&nbsp;de&nbsp;realizar&nbsp;los&nbsp;movimientos&nbsp;que&nbsp;se&nbsp;indican&nbsp;desde&nbsp;un&nbsp;fichero&nbsp;con&nbsp;una&nbsp;partida&nbsp;guardada.<br>
+Es&nbsp;capaz&nbsp;de&nbsp;detectar&nbsp;errores&nbsp;en&nbsp;el&nbsp;fichero,&nbsp;su&nbsp;existencia,&nbsp;o&nbsp;si&nbsp;la&nbsp;partida&nbsp;guardada&nbsp;llega&nbsp;a&nbsp;su&nbsp;fin.&nbsp;Estos&nbsp;escenarios&nbsp;solo&nbsp;pueden&nbsp;darse&nbsp;si&nbsp;se&nbsp;fuerza&nbsp;en&nbsp;el&nbsp;propio&nbsp;fichero.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-verificar_jugada">verificar_jugada</a>(self,&nbsp;tablero,&nbsp;turno,&nbsp;jugada)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-jugar">jugar</a>(self,&nbsp;tablero,&nbsp;jugada,&nbsp;turno,&nbsp;pila)<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;endgame:&nbsp;string&nbsp;que&nbsp;contiene&nbsp;incidencias&nbsp;sobre&nbsp;el&nbsp;fichero&nbsp;(si&nbsp;esta&nbsp;corrupto&nbsp;o&nbsp;si&nbsp;hay&nbsp;fin&nbsp;de&nbsp;partida).</tt></dd></dl>
+
+<dl><dt><a name="Game-signo"><strong>signo</strong></a>(self, x)</dt><dd><tt>Devuelve&nbsp;0,&nbsp;1&nbsp;o&nbsp;-1&nbsp;en&nbsp;funcion&nbsp;del&nbsp;parametro&nbsp;x.<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;1&nbsp;si&nbsp;x&nbsp;es&nbsp;positivo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;-1&nbsp;si&nbsp;x&nbsp;es&nbsp;negativo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;0&nbsp;si&nbsp;x&nbsp;es&nbsp;0</tt></dd></dl>
+
+<dl><dt><a name="Game-verificar_jugada"><strong>verificar_jugada</strong></a>(self, tablero, turno, jugada)</dt><dd><tt>Comprueba&nbsp;si&nbsp;la&nbsp;jugada&nbsp;puede&nbsp;realizarse&nbsp;o&nbsp;no.<br>
+LLAMADAS&nbsp;A&nbsp;PROCEDIMIENTOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#Game-signo">signo</a>(self,&nbsp;x)<br>
+RETORNOS:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Un&nbsp;entero.&nbsp;Puede&nbsp;referirse&nbsp;al&nbsp;indice&nbsp;de&nbsp;la&nbsp;lista&nbsp;MSG_STATUS.&nbsp;Ver&nbsp;codigo&nbsp;para&nbsp;mas&nbsp;informacion.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__author__</strong> = 'Rafael Sillero &lt;rafael.silnav[at]gmail.com&gt;<font color="#c040c0">\n</font>Luis Alberto Centeno &lt;luiscbr92[at]gmail.com&gt;'<br>
+<strong>__date__</strong> = '26 de Mayo 2014'<br>
+<strong>__version__</strong> = '1.0'<br>
+<strong>pila</strong> = []</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Rafael&nbsp;Sillero&nbsp;&lt;rafael.silnav[at]gmail.com&gt;<br>
+Luis&nbsp;Alberto&nbsp;Centeno&nbsp;&lt;luiscbr92[at]gmail.com&gt;</td></tr></table>
+</body></html>
